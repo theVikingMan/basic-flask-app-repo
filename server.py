@@ -9,7 +9,6 @@ from datetime import timedelta
 from sqlite3 import Connection as SQLite3Connection
 
 
-
 # Creating an instance of the class Flask
 
 app = Flask(__name__)
@@ -42,15 +41,11 @@ def _set_sqlite_pragma(dbapi_connection, connection_record):
 db = SQLAlchemy(app)
 now = datetime.now()
 
-
-
 # Creating our schema for the data base "User" and the "Feedback" forms
 # To create the database file: Enter into the python virtual environment
 # >>> from server import db
 # >>> db.create_all()
 # >>> exit()
-
-
 
 # Database table models
 class User(db.Model):
@@ -59,12 +54,10 @@ class User(db.Model):
     name = db.Column(db.String(50))
     email = db.Column(db.String(50))
 
-
 # Routes for the API
 @app.route('/Home')
 def home():
     return render_template("index.html")
-
 
 # Side additions for login, not part of the main project
 
